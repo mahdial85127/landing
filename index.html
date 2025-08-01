@@ -48,13 +48,14 @@
         .btn-green {
             background: green;
             position: fixed;
-            bottom: 80px;
+            bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
             width: calc(100% - 30px);
             max-width: 500px;
-            padding: 24px 10px;
-            font-size: 24px;
+            padding: 16px 10px; /* افزایش ارتفاع */
+            font-size: 18px;
+            font-weight: bold;  /* ضخیم‌تر */
             z-index: 1000;
             box-shadow: 0 6px 12px rgba(0,0,0,0.2), 0 0 10px rgba(0,128,0,0.3);
             border-radius: 8px;
@@ -172,9 +173,19 @@
 
 
 
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+            function scrollToTop() {
+                // مخفی کردن همه سوالات
+                for (let i = 1; i <= 4; i++) {
+                    const q = document.getElementById("q" + i);
+                    if (q) q.style.display = "none";
+                }
+
+                // نمایش فقط مرحله آخر (شماره موبایل)
+                document.getElementById("q4").style.display = "block";
+
+                // اسکرول به اون قسمت
+                document.getElementById("q4").scrollIntoView({ behavior: 'smooth' });
+            }
 
         document.getElementById("quiz").addEventListener("submit", function (e) {
             e.preventDefault();
