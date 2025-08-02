@@ -216,16 +216,16 @@ const utm_medium = urlParams.get('utm_medium') || '';
 const utm_campaign = urlParams.get('utm_campaign') || '';
 const utm_term = urlParams.get('utm_term') || '';
 
-const data = new URLSearchParams();
-data.append("phone", phone);
-data.append("age", age);
-data.append("need", need);
-data.append("area", area);
+const data =
+  "phone=" + encodeURIComponent(phone) +
+  "&age=" + encodeURIComponent(age) +
+  "&need=" + encodeURIComponent(need) +
+  "&area=" + encodeURIComponent(area) +
+  "&utm_source=" + encodeURIComponent(utm_source) +
+  "&utm_medium=" + encodeURIComponent(utm_medium) +
+  "&utm_campaign=" + encodeURIComponent(utm_campaign) +
+  "&utm_term=" + encodeURIComponent(utm_term);
 
-data.append("utm_source", utm_source);
-data.append("utm_medium", utm_medium);
-data.append("utm_campaign", utm_campaign);
-data.append("utm_term", utm_term);
 
 
 
@@ -234,7 +234,7 @@ data.append("utm_term", utm_term);
     headers: {
       "Content-Type": "application/x-www-form-urlencoded"
     },
-    body: data.toString()
+    body: data
   })
     .then(response => {
       if (response.ok) {
