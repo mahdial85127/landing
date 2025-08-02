@@ -18,6 +18,7 @@
 
     body {
     font-family: 'Yekan', sans-serif;
+    
     }
     </style>
 
@@ -56,8 +57,8 @@
     .highlight1, .highlight2 {
       padding: 10px 15px; border-radius: 10px; margin: 10px 5px; text-align: center; /* ✅ محتوا وسط‌چین */
     }
-    .highlight1 { background: #fff3cd; font-size: 18px;}
-    .highlight2 { background: #ffffff; font-size: 18px;}
+    .highlight1 { background: #fff3cd; font-size: 18px;   line-height: 1.5;    /* ✅ افزایش فاصله بین خطوط */}
+    .highlight2 { background: #ffffff; font-size: 18px;   line-height: 1.5;    /* ✅ افزایش فاصله بین خطوط */}
     .video { width: 100%; border-radius: 10px; margin: 10px 0; }
     .form-input {
     box-sizing: border-box;
@@ -156,13 +157,25 @@
       }
     }
 
-    function scrollToTop() {
-    for (let i = 1; i <= 4; i++) {
-        document.getElementById('q' + i).style.display = 'none';
-    }
-    document.getElementById('q4').style.display = 'block';
-    document.getElementById('q4').scrollIntoView({ behavior: 'smooth' });
-    }
+function scrollToTop() {
+  // پاک کردن انتخاب‌های قبلی
+  const radios = document.querySelectorAll('input[type="radio"]');
+  radios.forEach(radio => radio.checked = false);
+
+  // تنظیم مقادیر پیش‌فرض برای سوالات
+  document.querySelector('input[name="age"][value="30-40"]').checked = true;
+  document.querySelector('input[name="need"][value="medium"]').checked = true;
+  document.querySelector('input[name="area"][value="anxiety"]').checked = true;
+
+  // نمایش فقط مرحله شماره موبایل
+  for (let i = 1; i <= 4; i++) {
+    document.getElementById('q' + i).style.display = 'none';
+  }
+  const phoneStep = document.getElementById('q4');
+  phoneStep.style.display = 'block';
+  phoneStep.scrollIntoView({ behavior: 'smooth' });
+}
+
 
 
 
