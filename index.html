@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -75,6 +76,9 @@
 </head>
 <body>
 
+
+
+
   <div class="container" id="main-content">
     <img src="https://cdn.hamkadeh.com/Image1.png" alt="مشاوره روانشناسی" style="width: 100%; border-radius: 12px;" />
     <div class="highlight1">
@@ -137,6 +141,9 @@
     <h2 style="color: green;">✅ شماره شما با موفقیت ثبت شد</h2>
     <p style="font-size: 16px;">همکاران ما خیلی زود به شما تماس خواهند گرفت.</p>
   </div>
+
+
+
 
   <script>
     function next(step, fieldName) {
@@ -203,11 +210,24 @@ document.getElementById('quiz').addEventListener('submit', function (e) {
     return;
   }
 
-  const data = new URLSearchParams();
-  data.append("phone", phone);
-  data.append("age", age);
-  data.append("need", need);
-  data.append("area", area);
+const urlParams = new URLSearchParams(window.location.search);
+const utm_source = urlParams.get('utm_source') || '';
+const utm_medium = urlParams.get('utm_medium') || '';
+const utm_campaign = urlParams.get('utm_campaign') || '';
+const utm_term = urlParams.get('utm_term') || '';
+
+const data = new URLSearchParams();
+data.append("phone", phone);
+data.append("age", age);
+data.append("need", need);
+data.append("area", area);
+
+data.append("utm_source", utm_source);
+data.append("utm_medium", utm_medium);
+data.append("utm_campaign", utm_campaign);
+data.append("utm_term", utm_term);
+
+
 
   fetch("https://script.google.com/macros/s/AKfycbyGakeUAOsxL-CaRalgJC9RYhrH3CcmfqrrN5MBaQMRSCaA-ilcy2z0YrImZzKif_nS/exec", {
     method: 'POST',
