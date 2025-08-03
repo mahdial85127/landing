@@ -193,21 +193,28 @@
       notif.innerText = '✅ در حال ثبت اطلاعات شما هستیم...';
       notif.style.cssText = `
         position: fixed;
-        top: 20%;
+        bottom: 23%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translateX(-50%);
         background: #e53935;
         color: white;
-        padding: 16px 24px;
+        padding: 20px 0;
+        width: calc(100% - 30px);       /* تقریباً برابر با دکمه ارسال */
+        max-width: 500px;
+        height: 50px;                  /* ارتفاع حدوداً دو برابر دکمه */
         border-radius: 12px;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: bold;
-        max-width: 90vw;
         text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         z-index: 9999;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         line-height: 1.6;
       `;
+
+
 
 
       document.body.appendChild(notif);
