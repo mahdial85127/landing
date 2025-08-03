@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -7,28 +6,22 @@
   <title>مشاوره روانشناسی تلفنی | انتخاب بهترین مشاور</title>
   <meta name="description" content="در کمتر از ۳۰ ثانیه با پر کردن چند سوال ساده، مشاور مناسب شرایطت رو انتخاب کن." />
   
-    <style>
-    @font-face {
-    font-family: 'Yekan';
-    src: url('./fonts/Yekan.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-    }
-
-    body {
-    font-family: 'Yekan', sans-serif;
-    
-    }
-    </style>
-
   <style>
+    @font-face {
+      font-family: 'Yekan';
+      src: url('./fonts/Yekan.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
     body {
-      font-family: 'Yekan', 'YekanBakh', 'Yekan Bakh', sans-serif;
+      font-family: 'Yekan', sans-serif;
       background: #fff;
       margin: 0;
       padding: 0;
     }
+
     .container { max-width: 500px; margin: auto; padding: 15px; }
     .question { background: #f0f4f8; padding: 15px; border-radius: 10px; margin-bottom: 120px; }
     .question h3 { margin: 0 0 10px; font-size: 20px; }
@@ -41,11 +34,13 @@
       content: ''; position: absolute; top: 3px; left: 3px;
       width: 12px; height: 12px; background-color: #005de6;
     }
+
     .btn {
       font-family: inherit; display: block; width: 100%; padding: 10px;
       background: #005de6; color: white; border: none; border-radius: 8px;
       font-size: 18px; cursor: pointer; margin-top: 10px;
     }
+
     .btn-green {
       background: green; position: fixed; bottom: 10px; left: 50%;
       transform: translateX(-50%); width: calc(100% - 30px); max-width: 500px;
@@ -54,23 +49,25 @@
       border-radius: 8px; transition: background 0.3s ease;
     }
     .btn-green:hover { background: #009e00; }
-    .highlight1, .highlight2 {
-      padding: 10px 15px; border-radius: 10px; margin: 10px 5px; text-align: center; /* ✅ محتوا وسط‌چین */
-    }
-    .highlight1 { background: #fff3cd; font-size: 18px;   line-height: 1.5;    /* ✅ افزایش فاصله بین خطوط */}
-    .highlight2 { background: #ffffff; font-size: 18px;   line-height: 1.5;    /* ✅ افزایش فاصله بین خطوط */}
-    .video { width: 100%; border-radius: 10px; margin: 10px 0; }
-    .form-input {
-    box-sizing: border-box;
-    padding: 16px 12px;          /* بیشتر کردن ارتفاع */
-    margin: 15px 0;              /* بیشتر کردن فاصله اطراف */
-    border-radius: 10px;         /* گردتر شدن گوشه‌ها */
-    border: 2px solid #888;      /* ضخیم‌تر شدن کادر */
-    width: 100%;
-    font-size: 18px;             /* بزرگ‌تر شدن متن داخل */
-    direction: rtl;
-    }
 
+    .highlight1, .highlight2 {
+      padding: 10px 15px; border-radius: 10px; margin: 10px 5px; text-align: center;
+    }
+    .highlight1 { background: #fff3cd; font-size: 18px; line-height: 1.5; }
+    .highlight2 { background: #ffffff; font-size: 18px; line-height: 1.5; }
+
+    .video { width: 100%; border-radius: 10px; margin: 10px 0; }
+
+    .form-input {
+      box-sizing: border-box;
+      padding: 16px 12px;
+      margin: 15px 0;
+      border-radius: 10px;
+      border: 2px solid #888;
+      width: 100%;
+      font-size: 18px;
+      direction: rtl;
+    }
   </style>
 </head>
 <body>
@@ -86,6 +83,7 @@
       <span>تو کمتر از ۳۰ ثانیه، مسیر مناسب مشاوره برات مشخص میشه. آخرش هم یه ویدیوی خیلی کوتاه برات داریم 👇</span>
     </div>
     <div style="background: #005de6; color: white; text-align: center; padding: 10px 15px; border-radius: 20px; font-weight: bold; font-size: 18px; margin: 15px 0">فقط ۳۰ ثانیه وقت بذار تا بدونی دقیقاً چه مشاوره‌ای برای شرایط تو مناسبه – ببین و تصمیم بگیر 👇</div>
+
     <video class="video" controls playsinline preload="metadata" poster="https://cdn.hamkadeh.com/New-Landing-koli1%20(1).jpg">
       <source src="https://cdn.hamkadeh.com/falah2.mp4" type="video/mp4" />
     </video>
@@ -98,9 +96,6 @@
         <div class="option"><label><input type="radio" name="age" value="40+" />۴۰ سال به بالا</label></div>
         <button type="button" class="btn" onclick="next(2, 'age')">بعدی</button>
       </div>
-
-
-
 
       <div class="question" id="q2" style="display: none">
         <h3>در حال حاضر چقدر احساس نیاز به مشاوره روانشناسی دارید؟</h3>
@@ -157,81 +152,88 @@
       }
     }
 
-function scrollToTop() {
-  // پاک کردن انتخاب‌های قبلی
-  const radios = document.querySelectorAll('input[type="radio"]');
-  radios.forEach(radio => radio.checked = false);
+    function scrollToTop() {
+      const radios = document.querySelectorAll('input[type="radio"]');
+      radios.forEach(radio => radio.checked = false);
 
-  // تنظیم مقادیر پیش‌فرض برای سوالات
-  document.querySelector('input[name="age"][value="30-40"]').checked = true;
-  document.querySelector('input[name="need"][value="medium"]').checked = true;
-  document.querySelector('input[name="area"][value="anxiety"]').checked = true;
+      document.querySelector('input[name="age"][value="30-40"]').checked = true;
+      document.querySelector('input[name="need"][value="medium"]').checked = true;
+      document.querySelector('input[name="area"][value="anxiety"]').checked = true;
 
-  // نمایش فقط مرحله شماره موبایل
-  for (let i = 1; i <= 4; i++) {
-    document.getElementById('q' + i).style.display = 'none';
-  }
-  const phoneStep = document.getElementById('q4');
-  phoneStep.style.display = 'block';
-  phoneStep.scrollIntoView({ behavior: 'smooth' });
-}
-
-
-
-
-
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyGakeUAOsxL-CaRalgJC9RYhrH3CcmfqrrN5MBaQMRSCaA-ilcy2z0YrImZzKif_nS/exec';
-document.getElementById('quiz').addEventListener('submit', function (e) {
-  e.preventDefault();
-
-  const age = document.querySelector('input[name="age"]:checked')?.value;
-  const need = document.querySelector('input[name="need"]:checked')?.value;
-  const area = document.querySelector('input[name="area"]:checked')?.value;
-  const phoneInput = document.querySelector('input[name="phone"]');
-  const phone = phoneInput.value.trim();
-  const isValid = /^09\d{9}$/.test(phone);
-
-  // بررسی پر بودن همه گزینه‌ها
-  if (!age || !need || !area) {
-    alert("لطفاً به تمام سوالات پاسخ دهید.");
-    return;
-  }
-
-  if (!isValid) {
-    alert('لطفاً شماره موبایل معتبر وارد کنید (با 09 و 11 رقمی)');
-    phoneInput.focus();
-    return;
-  }
-
-  const data = new URLSearchParams();
-  data.append("phone", phone);
-  data.append("age", age);
-  data.append("need", need);
-  data.append("area", area);
-
-  fetch("https://script.google.com/macros/s/AKfycbyGakeUAOsxL-CaRalgJC9RYhrH3CcmfqrrN5MBaQMRSCaA-ilcy2z0YrImZzKif_nS/exec", {
-    method: 'POST',
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded"
-    },
-    body: data
-  })
-    .then(response => {
-      if (response.ok) {
-        document.getElementById('main-content').style.display = 'none';
-        document.getElementById('thank-you-page').style.display = 'block';
-      } else {
-        alert('خطا در ارسال اطلاعات. لطفاً دوباره تلاش کنید.');
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById('q' + i).style.display = 'none';
       }
-    })
-    .catch(error => {
-      alert('خطا در ارسال اطلاعات. لطفاً دوباره تلاش کنید.');
-      console.error('Error!', error.message);
+      const phoneStep = document.getElementById('q4');
+      phoneStep.style.display = 'block';
+      phoneStep.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    document.getElementById('quiz').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const age = document.querySelector('input[name="age"]:checked')?.value;
+      const need = document.querySelector('input[name="need"]:checked')?.value;
+      const area = document.querySelector('input[name="area"]:checked')?.value;
+      const phoneInput = document.querySelector('input[name="phone"]');
+      const phone = phoneInput.value.trim();
+      const isValid = /^09\d{9}$/.test(phone);
+
+      if (!age || !need || !area) {
+        alert("لطفاً به تمام سوالات پاسخ دهید.");
+        return;
+      }
+
+      if (!isValid) {
+        alert('لطفاً شماره موبایل معتبر وارد کنید (با 09 و 11 رقمی)');
+        phoneInput.focus();
+        return;
+      }
+
+      const notif = document.createElement('div');
+      notif.innerText = '✅ در حال ثبت اطلاعات شما هستیم...';
+      notif.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-size: 16px;
+        z-index: 9999;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      `;
+      document.body.appendChild(notif);
+
+      const data = new URLSearchParams();
+      data.append("phone", phone);
+      data.append("age", age);
+      data.append("need", need);
+      data.append("area", area);
+
+      fetch("https://script.google.com/macros/s/AKfycbyGakeUAOsxL-CaRalgJC9RYhrH3CcmfqrrN5MBaQMRSCaA-ilcy2z0YrImZzKif_nS/exec", {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: data
+      })
+        .then(response => {
+          if (response.ok) {
+            setTimeout(() => {
+              document.body.removeChild(notif);
+              document.getElementById('main-content').style.display = 'none';
+              document.getElementById('thank-you-page').style.display = 'block';
+            }, 500);
+          } else {
+            alert('❌ خطا در ارسال اطلاعات. لطفاً دوباره تلاش کنید.');
+            document.body.removeChild(notif);
+          }
+        })
+        .catch(error => {
+          alert('❌ خطا در ارسال اطلاعات. لطفاً دوباره تلاش کنید.');
+          console.error('Error!', error.message);
+          document.body.removeChild(notif);
+        });
     });
-});
-
-
   </script>
-
 </body>
 </html>
